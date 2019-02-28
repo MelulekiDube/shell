@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+
 # shell
 This is a simple shell written in C.
-=======
 # Meluleki Shell
 
 This is a basic shell written in C [this tutorial](https://brennan.io/2015/01/16/write-a-shell-in-c/). More features are to implemented as time goes on.
@@ -25,4 +24,4 @@ This is more of a personal project for learning different things and therefore n
 ## Acknowledgments
 
 * [Stephen Brennan](https://brennan.io/) for the awesome tutorial.
->>>>>>> fbd9a54a7b253444f8457bbe0bd50853ebeb4008
+
