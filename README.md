@@ -1,6 +1,4 @@
 
-# shell
-This is a simple shell written in C.
 # Meluleki Shell
 
 This is a basic shell written in C [this tutorial](https://brennan.io/2015/01/16/write-a-shell-in-c/). More features are to implemented as time goes on.
