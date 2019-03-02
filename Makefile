@@ -7,6 +7,7 @@ CC := gcc
 SRCDIR := src
 BUILDDIR := build
 BINDIR := bin
+SPIKEDIR := spike
 TARGET := bin/runner
 WFIND := C:\cygwin64\bin\find
 
@@ -30,7 +31,7 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT) clean
 	@mkdir -p $(BUILDDIR);
 	@echo "compiling the source files"
 	$(CC) $(CFLAGS) $(INC) -c -o $@ $<
-
+	
 run:
 	./$(TARGET)
 	
