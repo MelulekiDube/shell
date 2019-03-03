@@ -22,10 +22,11 @@ OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 CFLAGS := -g -Wall
 #LIB := 
 INC := -I include
+LINKLIB:=-lreadline
 $(TARGET): $(OBJECTS)
 	@echo " Linking...";
 	@mkdir -p $(BINDIR)
-	$(CC) $^ -o $(TARGET)
+	$(CC) $^ -o $(TARGET) $(LINKLIB)
 
 $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT) clean
 	@mkdir -p $(BUILDDIR);

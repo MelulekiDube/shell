@@ -4,7 +4,8 @@
 #include <sys/wait.h>
 #include <string.h>
 #include <limits.h>
-
+#include <readline/readline.h>
+#include <readline/history.h>
 
 static char *curren_dir;
 void update_dir();
@@ -87,6 +88,7 @@ int msh_exit(char **_){
 //move readline part to new function to tidy code up
 #define MSH_RL_BUFFERSIZE 1024
 char *msh_read_line(void){
+	
 	int bufsize = MSH_RL_BUFFERSIZE;
 	int position = 0;
 	char *buffer = malloc(sizeof(char)*bufsize);
@@ -193,7 +195,7 @@ void msh_loop(){
 	
 	do{
 		printf("%s> ",curren_dir);
-		line = msh_read_line();
+		line = readline("");
 		args = msh_split_line(line);
 		status = msh_execute(args);
 		
