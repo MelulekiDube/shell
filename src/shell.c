@@ -103,9 +103,11 @@ char *msh_read_line(void){
 			buffer[position] = '\0';
 			return buffer;
 		}else if(c==8){
-            if(c>0){
-                --c;
+            if(typed_chars>0){
                 buffer[position] = c;
+                --typed_chars;
+            }else{
+                printf("%c",7);
             }
         }else{
             ++typed_chars;
@@ -149,7 +151,6 @@ char **msh_split_line(char *line){
 
 	tokens[pos] = NULL;
 	return tokens;
-
 }
 
 int msh_launch(char **args){
