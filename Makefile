@@ -1,6 +1,5 @@
-#Make file adapted from https://hiltmon.com/blog/2013/07/03/a-simple-c-plus-plus-project-structure/
+#Meluleki Dube
 #
-
 
 CC := gcc 
 # CC := clang --analyze # and comment out the linker last line for sanity
@@ -18,6 +17,8 @@ else
 	SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 endif
 
+all : $(TARGET)
+
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 CFLAGS := -g -Wall
 #LIB := 
@@ -32,10 +33,10 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.$(SRCEXT) clean
 	@mkdir -p $(BUILDDIR);
 	@echo "compiling the source files"
 	$(CC) $(CFLAGS) $(INC) -c -o $@ $<
-	
-run:
+
+run: $(TARGET)
 	./$(TARGET)
-	
+
 clean:
 	@echo " Cleaning..."; 
 	$(RM) -r $(BUILDDIR) $(TARGET) $(BINDIR)
