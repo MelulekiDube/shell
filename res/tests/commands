@@ -1,0 +1,17 @@
+cd temp
+find ./ -name \*.html -printf '%CD\t%p\n' | grep "03/10/08" | awk '{print $2}' | xargs -t -i mv {} temp/
+agetty -L 9600 ttyS1 vt100
+alias home='cd /home/tecmint/public_html'
+apropos adduser
+sudo echo "shutdown -h now" | at -m 23:55
+awk '//{print}'/etc/hosts
+echo “This is TecMint - Linux How Tos”
+grep ‘tecmint’ domain-list.txt
+cat file1 file2 | gzip > foo.gz
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
+history
+ln -s /usr/bin/lscpu cpuinfo
+mkdir tecmint-files
+tar cf - . | zip | dd of=/dev/nrst0 obs=16k
+zip inarchive.zip foo.c bar.c --out outarchive.zip
+tar cf - .| zip backup -
